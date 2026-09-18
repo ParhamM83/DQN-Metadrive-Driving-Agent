@@ -1,0 +1,13 @@
+# Python Version Constraint
+# Requires-Python >=3.6, <3.12
+
+# Core Simulation
+metadrive-simulator==0.4.2.2
+gymnasium==0.28.1
+
+# Deep Learning & Math
+torch>=2.0.0
+numpy>=1.24.0
+
+# Visualization & Plotting
+matplotlib>=3.7.0

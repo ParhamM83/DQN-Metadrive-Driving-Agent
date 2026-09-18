@@ -1,0 +1,9 @@
+{
+    "average_reward": 372.44,
+    "success_rate": 52.2,
+    "out_of_road_rate": 19.2,
+    "crash_vehicle_rate": 28.6,
+    "tested_scenarios": 100,
+    "start_seed": 21,
+    "total_episodes": 100
+}

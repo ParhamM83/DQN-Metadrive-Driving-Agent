@@ -1,8 +1,10 @@
 {
-    "average_reward": 372.44,
-    "success_rate": 52.2,
-    "out_of_road_rate": 19.2,
-    "crash_vehicle_rate": 28.6,
+    "average_reward": 332.74,
+    "reward_std": 222.78,
+    "average_steps": 302.3,
+    "success_rate": 42.0,
+    "out_of_road_rate": 24.0,
+    "crash_vehicle_rate": 34.0,
     "tested_scenarios": 100,
     "start_seed": 21,
     "total_episodes": 100

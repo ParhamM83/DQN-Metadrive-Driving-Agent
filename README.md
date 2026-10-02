@@ -3,13 +3,6 @@
 # Safe Driving with Deep Q-Networks in MetaDrive
 ### Autonomous Driving Agent with Zero-Shot Generalization Across Procedural Scenarios
 
-[![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![MetaDrive](https://img.shields.io/badge/MetaDrive-0.4.2.2-0288D1?style=for-the-badge)](https://github.com/metadriverse/metadrive)
-[![Gymnasium](https://img.shields.io/badge/Gymnasium-0.28.1-009688?style=for-the-badge)](https://gymnasium.farama.org/)
-
----
-
 </div>
 
 ## Overview
@@ -27,11 +20,11 @@ Evaluated greedily ($\epsilon = 0$) across 100 consecutive unseen map seeds (`se
 
 | Metric | Result | Target / Baseline |
 | :--- | :---: | :---: |
-| **Success Rate (Arrived at Destination)** | **52.2%** | > 30% |
-| **Average Episode Reward** | **372.44** | > 0.0 |
-| **Vehicle Crash Rate** | **28.6%** | Balanced |
-| **Out-of-Road Rate** | **19.2%** | Balanced |
-| **Average Episode Length** | **304.5 steps** | Decisive navigation |
+| **Success Rate (Arrived at Destination)** | **42.0%** | > 30% |
+| **Average Episode Reward** | **332.74** | > 0.0 |
+| **Vehicle Crash Rate** | **34.0%** | Balanced |
+| **Out-of-Road Rate** | **24.0%** | Balanced |
+| **Average Episode Length** | **302.3 steps** | Decisive navigation |
 
 > Detailed episode logs and metrics are stored in [`Evaluation/evaluation_report.json`](Evaluation/evaluation_report.json).
 
@@ -60,7 +53,7 @@ Reinforcement learning in continuous physical vehicle dynamics suffers from seve
 flowchart LR
     P1[<b>Phase 1</b><br>Speed Trap<br><i>Reckless Max Throttle</i>] --> P2[<b>Phase 2</b><br>Learned Paralysis<br><i>Severe Penalties → Stalling</i>]
     P2 --> P3[<b>Phase 3</b><br>Forward-Forced Action Map<br><i>Min Throttle 0.1</i>]
-    P3 --> P4[<b>Phase 4</b><br>Scale & Generalize<br><i>10k Eps, 52.2% Zero-Shot</i>]
+    P3 --> P4[<b>Phase 4</b><br>Scale & Generalize<br><i>10k Eps, 42.0% Zero-Shot</i>]
 ```
 
 ### 1. Phase 1: The Speed Trap (Local Maximum)
@@ -81,7 +74,7 @@ flowchart LR
 
 ### 4. Phase 4: Deep Architecture Scaling & Universal Generalization
 - **Scaling:** Extended training to **10,000 episodes** with target synchronization every 40 episodes and hidden dimensions expanded to 512 units.
-- **Outcome:** Reached **52.2% success** on 100 completely novel maps with a symmetrical failure profile (19.2% out-of-road vs 28.6% collision), demonstrating that steering grip and forward acceleration limits are equally balanced.
+- **Outcome:** Reached **42.0% success** on 100 completely novel maps with a balanced failure profile (24.0% out-of-road vs 34.0% collision), demonstrating that steering grip and forward acceleration limits are well balanced.
 
 ---
 
@@ -158,8 +151,8 @@ The policy network uses a 3-layer Multi-Layer Perceptron (MLP) trained with Adam
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/<username>/metadrive-dqn-agent.git
-   cd metadrive-dqn-agent
+   git clone https://github.com/ParhamM83/DQN-Metadrive-Driving-Agent.git
+   cd DQN-Metadrive-Driving-Agent
    ```
 
 2. **Create and activate a virtual environment:**
